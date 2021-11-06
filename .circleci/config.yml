@@ -1,13 +1,10 @@
 version: 2.1
-orbs:
-  windows: circleci/windows@2.4.0
 jobs:
-  build-windows:
-    executor: windows/gpu-nvidia
+  build:
+    machine:
+      image: ubuntu-2004:202010-01
     steps:
       - checkout
-      - run: systeminfo
-workflows:
-  windows-workflow:
-    jobs:
-      - build-windows
+      - run:
+          name: "Testing"
+          command: echo "Hi"
